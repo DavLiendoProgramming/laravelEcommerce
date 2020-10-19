@@ -19,3 +19,9 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('helloworld');
 });
+Route::get('/articles',function(){
+    return view('articles');
+});
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
